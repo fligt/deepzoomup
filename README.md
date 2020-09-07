@@ -10,15 +10,10 @@ Available soon!
 
 ## How to use
 
-Fill me in please! Don't forget code examples:
+<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js" 
+        integrity="sha512-qvQYH6mPuE46uFcWLI8BdGaJpB5taX4lltbSIw5GF4iODh2xIgyz5ii1WpuzPFUknHCps0mi4mFGR44bjdZlZg==" 
+        crossorigin="anonymous">
+</script>
 
-```python
-1+1
-```
-
-
-
-
-    2
-
-
+<div id="xyx" style="width: 800px; height: 400px; background-color: snow"></div>
+<script src="https://dore-data.s3.us-west-002.backblazeb2.com/viewers/xxx.js?callback=OpenSeadragon"></script>
