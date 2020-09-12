@@ -1,8 +1,6 @@
 # Welcome to dzi2b2
-
-
-
 > Publish your high resolution images on line as deep zoom images (dzi) to the Backblaze (b2) cloud. 
+
 
 ## Install
 

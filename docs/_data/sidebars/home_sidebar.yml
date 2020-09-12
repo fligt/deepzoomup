@@ -10,6 +10,9 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
+      title: 'Converting to deep zoom package '
+      url: /deepzoom
+    - output: web,pdf
       title: 'Publish your deep zoom images to the cloud '
       url: /backblaze
     output: web
