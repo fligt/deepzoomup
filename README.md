@@ -6,11 +6,11 @@ Creating large interactive deep zoom images on the web used to be a technically 
 
 # What you need to do 
 
-(I assume you know have Python installed and know how to run Jupyter notebooks.) 
+I assume you have Python installed and know how to run Jupyter notebooks. See: https://anaconda.org/. 
 
-1) Install this package with 
+1) Install the package by typing the following command in the terminal: 
 
-    $ pip install 
+    $ pip install deepzoomup (almost available!) 
 
 2) Get an account for cloud storage at Backblaze B2. 
 
@@ -29,5 +29,5 @@ Here is an example of a deepzoom image that was created with *deepzoomup*:
         crossorigin="anonymous">
 </script>
 
-<div id="xyx" style="width: 800px; height: 400px; background-color: snow"></div>
-<script src="https://dore-data.s3.us-west-002.backblazeb2.com/viewers/xxx.js?callback=OpenSeadragon"></script>
+<div id="RP-T-1930-22" style="width: 800px; height: 400px; background-color: snow"></div>
+<script src="https://dore-data.s3.us-west-002.backblazeb2.com/viewers/RP-T-1930-22.js?callback=OpenSeadragon"></script>

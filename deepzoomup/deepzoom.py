@@ -77,7 +77,7 @@ class DeepZoomStore:
 
 
 
-# Functions
+
 
 def upload(b2_api, bucket_name):
     ''''''
