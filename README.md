@@ -16,18 +16,10 @@ I assume you have Python installed and know how to run Jupyter notebooks. See: h
 
 3) Create a public B2 bucket with credentials (id and key) for reading and writing. 
 
-4) Run the following code in your Jupyter notebook: 
-
-    <Code here>
+4) Follow the instructions 'Uploading your own deep zoom image'
 
 
 
 Here is an example of a deepzoom image that was created with *deepzoomup*: 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openseadragon/2.4.2/openseadragon.min.js" 
-        integrity="sha512-qvQYH6mPuE46uFcWLI8BdGaJpB5taX4lltbSIw5GF4iODh2xIgyz5ii1WpuzPFUknHCps0mi4mFGR44bjdZlZg==" 
-        crossorigin="anonymous">
-</script>
-
-<div id="RP-T-1930-22" style="width: 800px; height: 400px; background-color: snow"></div>
-<script src="https://dore-data.s3.us-west-002.backblazeb2.com/viewers/RP-T-1930-22.js?callback=OpenSeadragon"></script>
+https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html

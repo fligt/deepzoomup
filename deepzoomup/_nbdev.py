@@ -8,7 +8,10 @@ index = {"DeepZoomStore": "01_deepzoom.ipynb",
          "connect_b2_bucket": "01_deepzoom.ipynb",
          "dzp_save": "01_deepzoom.ipynb",
          "dzi_to_js": "01_deepzoom.ipynb",
-         "create_multiviewer": "01_deepzoom.ipynb",
+         "list_names_and_js_urls": "01_deepzoom.ipynb",
+         "stack_image_json": "01_deepzoom.ipynb",
+         "make_multiviewer_jsonp": "01_deepzoom.ipynb",
+         "make_multiviewer_html": "01_deepzoom.ipynb",
          "ROOTDIR": "01_deepzoom.ipynb",
          "VIEWERSDIR": "01_deepzoom.ipynb"}
 

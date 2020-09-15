@@ -1,6 +1,6 @@
 ---
 
-title: How to create your own deep zoom images on the web 
+title: Uploading your own deep zoom image 
 
 keywords: fastai
 sidebar: home_sidebar
@@ -29,45 +29,15 @@ sidebar: home_sidebar
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Converting an image into a deep zoom pyramid and publishing as deep zoom package in a b2 bucket, is a three step process: 1) convert to dzi pyramid, 2) upload pyramid to bucket, 3) create html and jsonp viewers.</p>
+<p>Once you have managed to register a Backblaze cloud storage account and created a public <code>bucket</code>, the hard work is done!</p>
+<p>Upload your deep zoom image by executing the following code in a Jupyter notebook:</p>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">frank</span><span class="o">/</span><span class="n">Work</span><span class="o">/</span><span class="n">Werkmappen_Software</span><span class="o">/</span><span class="n">dzi2b2</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>/mnt/datadisk/Work/Werkmappen_Software/dzi2b2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You need to copy your own personal B2 bucket application-key, application-key-id and bucket-name in a notebook cell and run the cell by pressing Shift-Enter.</p>
+<p><strong>Step 1</strong>: You need to copy your own personal B2 bucket application-key, application-key-id and bucket-name in a notebook cell and run the cell (by pressing Shift-Enter).</p>
 <div class="highlight"><pre><span></span><span class="n">application_key</span> <span class="o">=</span> <span class="s2">&quot;xxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;</span> 
 <span class="n">application_key_id</span> <span class="o">=</span> <span class="s2">&quot;yyyyyyyyyyyyyyyyyyyyyyyyyy&quot;</span>  
 <span class="n">bucket_name</span> <span class="o">=</span> <span class="s2">&quot;my-first-bucket&quot;</span>
@@ -76,148 +46,52 @@ sidebar: home_sidebar
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Step 2</strong>: Import the deepzoomup package and connect to your B2 bucket:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">deepzoomup</span> 
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">deepzoomup</span>  
+<span class="n">my_dzs</span> <span class="o">=</span> <span class="n">deepzoomup</span><span class="o">.</span><span class="n">DeepZoomStore</span><span class="p">(</span><span class="n">application_key_id</span><span class="p">,</span> <span class="n">application_key</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dz</span> <span class="o">=</span> <span class="n">deepzoomup</span><span class="o">.</span><span class="n">DeepZoomStore</span><span class="p">()</span>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Step 3</strong>: Select the image file and upload:</p>
+<div class="highlight"><pre><span></span><span class="n">my_image</span> <span class="o">=</span> <span class="s1">&#39;path/to/my/huge.tif&#39;</span>
+<span class="n">my_dzs</span><span class="o">.</span><span class="n">make_deepzoom</span><span class="p">(</span><span class="n">my_image</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dz</span><span class="o">.</span><span class="n">dzp_save</span><span class="p">(</span><span class="n">fname1</span><span class="p">)</span>
-
-<span class="n">dz</span><span class="o">.</span><span class="n">connect_b2_bucket</span><span class="p">(</span><span class="n">application_key_id</span><span class="p">,</span> <span class="n">application_key</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">)</span>
-<span class="n">dz</span><span class="o">.</span><span class="n">make_webviewers</span><span class="p">()</span>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That is all!</p>
+<p>You can repeat this for other images:</p>
+<div class="highlight"><pre><span></span><span class="n">my_image</span> <span class="o">=</span> <span class="s1">&#39;path/to/another/huge.png&#39;</span> 
+<span class="n">my_dzs</span><span class="o">.</span><span class="n">make_deepzoom</span><span class="p">(</span><span class="n">my_image</span><span class="p">)</span>
 </pre></div>
 
-    </div>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Not overwriting existing files: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres
-Saving: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres.js
-Saving: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html
-</pre>
 </div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now your deep zoom image can be viewed on-line: <em>need-to-provide-weblink</em>.</p>
 
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dz</span><span class="o">.</span><span class="n">create_multiviewer</span><span class="p">(</span><span class="s1">&#39;all_test3&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Automatically updating b2 bucket to include all newly created images...
-upload dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html           
-upload dzp_RP-T-1930-22_highres/RP-T-1930-22_highres.js                  
-Saving: ./deepzoom/viewers/all_test3.js                                  
-Automatically uploading multiviewer: all_test3...
-upload viewers/all_test3.js                                           
-                                                                      </pre>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Is the code above hidden now?</p>
 
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dz</span><span class="o">.</span><span class="n">upload</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Not overwriting existing files: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres
-Saving: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres.js
-Saving: ./deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html
-upload dzp_RP-T-1930-22_highres/RP-T-1930-22_highres.js            
-upload dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html           
-upload viewers/all_test.js                                               
-                                                                         </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h1>
@@ -242,7 +116,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DeepZoomStore" class="doc_header"><code>class</code> <code>DeepZoomStore</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L23" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DeepZoomStore</code>()</p>
+<h2 id="DeepZoomStore" class="doc_header"><code>class</code> <code>DeepZoomStore</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L24" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DeepZoomStore</code>(<strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -266,7 +140,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="upload" class="doc_header"><code>upload</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L82" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>upload</code>(<strong><code>b2_api</code></strong>, <strong><code>bucket_name</code></strong>)</p>
+<h4 id="upload" class="doc_header"><code>upload</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L87" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>upload</code>(<strong><code>b2_api</code></strong>, <strong><code>bucket_name</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -290,7 +164,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="make_html" class="doc_header"><code>make_html</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L115" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_html</code>(<strong><code>name</code></strong>, <strong><code>bucket_name</code></strong>)</p>
+<h4 id="make_html" class="doc_header"><code>make_html</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L120" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_html</code>(<strong><code>name</code></strong>, <strong><code>bucket_name</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -314,7 +188,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="connect_b2_bucket" class="doc_header"><code>connect_b2_bucket</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L153" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>connect_b2_bucket</code>(<strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>)</p>
+<h4 id="connect_b2_bucket" class="doc_header"><code>connect_b2_bucket</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L161" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>connect_b2_bucket</code>(<strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>)</p>
 </blockquote>
 
 <pre><code>Creates upload connection to your Backblaze b2 bucket.</code></pre>
@@ -340,7 +214,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="dzp_save" class="doc_header"><code>dzp_save</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L171" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dzp_save</code>(<strong><code>fname</code></strong>)</p>
+<h4 id="dzp_save" class="doc_header"><code>dzp_save</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L179" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dzp_save</code>(<strong><code>fname</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -364,7 +238,7 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="dzi_to_js" class="doc_header"><code>dzi_to_js</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L193" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dzi_to_js</code>(<strong><code>name</code></strong>, <strong><code>base_url</code></strong>, <strong><code>bucket_name</code></strong>)</p>
+<h4 id="dzi_to_js" class="doc_header"><code>dzi_to_js</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L200" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dzi_to_js</code>(<strong><code>name</code></strong>, <strong><code>base_url</code></strong>, <strong><code>bucket_name</code></strong>)</p>
 </blockquote>
 
 <pre><code>Parse XML.dzi file into JSONP.js file.</code></pre>
@@ -390,13 +264,221 @@ upload viewers/all_test.js
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="create_multiviewer" class="doc_header"><code>create_multiviewer</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L239" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_multiviewer</code>(<strong><code>viewer_name</code></strong>, <strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>, <strong><code>selection</code></strong>=<em><code>'all'</code></em>)</p>
+<h4 id="list_names_and_js_urls" class="doc_header"><code>list_names_and_js_urls</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L250" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>list_names_and_js_urls</code>(<strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="stack_image_json" class="doc_header"><code>stack_image_json</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L275" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>stack_image_json</code>(<strong><code>js_urls</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="make_multiviewer_jsonp" class="doc_header"><code>make_multiviewer_jsonp</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L298" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_multiviewer_jsonp</code>(<strong><code>viewer_name</code></strong>, <strong><code>application_key_id</code></strong>, <strong><code>application_key</code></strong>, <strong><code>bucket_name</code></strong>, <strong><code>selection</code></strong>=<em><code>'all'</code></em>)</p>
 </blockquote>
 
 <pre><code>Download all single image JSONP.js files and combine in multi-viewer.js</code></pre>
 
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="make_multiviewer_html" class="doc_header"><code>make_multiviewer_html</code><a href="https://github.com/fligt/deepzoomup/tree/master/deepzoomup/deepzoom.py#L333" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>make_multiviewer_html</code>(<strong><code>viewer_name</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">names</span><span class="p">,</span> <span class="n">js_urls</span> <span class="o">=</span> <span class="n">list_names_and_js_urls</span><span class="p">(</span><span class="n">application_key_id</span><span class="p">,</span> <span class="n">application_key</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stack_image_json</span><span class="p">(</span><span class="n">js_urls</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{
+  &#34;Image&#34;: {
+    &#34;xmlns&#34;: &#34;http://schemas.microsoft.com/deepzoom/2008&#34;,
+    &#34;Url&#34;: &#34;https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_files/&#34;,
+    &#34;Format&#34;: &#34;jpeg&#34;,
+    &#34;Overlap&#34;: &#34;1&#34;,
+    &#34;TileSize&#34;: &#34;254&#34;,
+    &#34;Size&#34;: {
+      &#34;Height&#34;: &#34;5028&#34;,
+      &#34;Width&#34;: &#34;4436&#34;
+    }
+  }
+},
+{
+  &#34;Image&#34;: {
+    &#34;xmlns&#34;: &#34;http://schemas.microsoft.com/deepzoom/2008&#34;,
+    &#34;Url&#34;: &#34;https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-51_highres/RP-T-1930-51_highres_files/&#34;,
+    &#34;Format&#34;: &#34;jpeg&#34;,
+    &#34;Overlap&#34;: &#34;1&#34;,
+    &#34;TileSize&#34;: &#34;254&#34;,
+    &#34;Size&#34;: {
+      &#34;Height&#34;: &#34;5814&#34;,
+      &#34;Width&#34;: &#34;4180&#34;
+    }
+  }
+}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">viewer_name</span> <span class="o">=</span> <span class="s1">&#39;test_index2&#39;</span>
+<span class="n">make_multiviewer_jsonp</span><span class="p">(</span><span class="n">viewer_name</span><span class="p">,</span> <span class="n">application_key_id</span><span class="p">,</span> <span class="n">application_key</span><span class="p">,</span> <span class="n">bucket_name</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Saving: ./deepzoom/viewers/test_index2.js
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">make_multiviewer_html</span><span class="p">(</span><span class="n">viewer_name</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Saving: ./deepzoom/viewers/test_index2.html
+</pre>
+</div>
 </div>
 
 </div>

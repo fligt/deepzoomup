@@ -10,7 +10,7 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: 'How to create your own deep zoom images on the web '
+      title: 'Uploading your own deep zoom image '
       url: /deepzoom
     - output: web,pdf
       title: 'Publish your deep zoom images to the cloud '
