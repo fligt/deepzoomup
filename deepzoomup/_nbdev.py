@@ -2,18 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"DeepZoomStore": "01_deepzoom.ipynb",
-         "upload": "01_deepzoom.ipynb",
-         "make_html": "01_deepzoom.ipynb",
-         "connect_b2_bucket": "01_deepzoom.ipynb",
-         "dzp_save": "01_deepzoom.ipynb",
-         "dzi_to_js": "01_deepzoom.ipynb",
-         "list_names_and_js_urls": "01_deepzoom.ipynb",
-         "stack_image_json": "01_deepzoom.ipynb",
-         "make_multiviewer_jsonp": "01_deepzoom.ipynb",
-         "make_multiviewer_html": "01_deepzoom.ipynb",
-         "ROOTDIR": "01_deepzoom.ipynb",
-         "VIEWERSDIR": "01_deepzoom.ipynb"}
+index = {"DeepZoomStore": "02_deepzoom.ipynb",
+         "upload": "02_deepzoom.ipynb",
+         "make_html": "02_deepzoom.ipynb",
+         "connect_b2_bucket": "02_deepzoom.ipynb",
+         "dzp_save": "02_deepzoom.ipynb",
+         "dzi_to_js": "02_deepzoom.ipynb",
+         "list_names_and_js_urls": "02_deepzoom.ipynb",
+         "stack_image_json": "02_deepzoom.ipynb",
+         "make_multiviewer_jsonp": "02_deepzoom.ipynb",
+         "make_multiviewer_html": "02_deepzoom.ipynb",
+         "ROOTDIR": "02_deepzoom.ipynb",
+         "VIEWERSDIR": "02_deepzoom.ipynb"}
 
 modules = ["deepzoom.py"]
 

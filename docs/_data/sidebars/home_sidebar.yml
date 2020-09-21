@@ -11,6 +11,9 @@ entries:
       url: /
     - output: web,pdf
       title: 'Uploading your own deep zoom image '
+      url: /uploading
+    - output: web,pdf
+      title: 'Functions '
       url: /deepzoom
     - output: web,pdf
       title: 'Publish your deep zoom images to the cloud '
