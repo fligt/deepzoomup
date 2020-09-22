@@ -12,6 +12,7 @@ index = {"DeepZoomStore": "02_deepzoom.ipynb",
          "stack_image_json": "02_deepzoom.ipynb",
          "make_multiviewer_jsonp": "02_deepzoom.ipynb",
          "make_multiviewer_html": "02_deepzoom.ipynb",
+         "dzp_thumbnail": "02_deepzoom.ipynb",
          "ROOTDIR": "02_deepzoom.ipynb",
          "VIEWERSDIR": "02_deepzoom.ipynb"}
 
