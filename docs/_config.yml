@@ -1,7 +1,7 @@
-repository: fligt/dzi2b2
+repository: fligt/deepzoomup
 output: web
-topnav_title: dzi2b2
-site_title: dzi2b2
+topnav_title: deepzoomup
+site_title: deepzoomup
 company_name: Frank Ligterink
 description: Publish your deep zoom images via Backblaze cloud online
 # Set to false to disable KaTeX math

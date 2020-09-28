@@ -168,7 +168,6 @@ var viewer = OpenSeadragon({{
 
 
 def connect_b2_bucket(application_key_id, application_key, bucket_name):
-
     '''Creates upload connection to your Backblaze b2 bucket.'''
 
     info = b2.InMemoryAccountInfo()

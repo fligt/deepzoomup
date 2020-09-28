@@ -20,6 +20,11 @@ I assume you have Python installed and know how to run Jupyter notebooks. See: h
 
 
 
-Here is an example of a deepzoom image that was created with *deepzoomup*: 
+Here is an example of a cloud stored image that was created with *deepzoomup*: 
 
-https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html
+
+<a href="https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/RP-T-1930-22_highres_view.html" target="_blank">
+    <img src="https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/tn_RP-T-1930-22_highres.png" title="click image to open deepzoom viewer">
+</a>
+
+
