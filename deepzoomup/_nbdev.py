@@ -2,17 +2,22 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"DeepZoomStore": "02_deepzoom.ipynb",
+index = {"dzi_html_template": "02_deepzoom.ipynb",
+         "dzi_js_template": "02_deepzoom.ipynb",
+         "viewer_div_template": "02_deepzoom.ipynb",
+         "callback_js_template": "02_deepzoom.ipynb",
+         "callback_div_template": "02_deepzoom.ipynb",
          "upload": "02_deepzoom.ipynb",
          "make_html": "02_deepzoom.ipynb",
          "connect_b2_bucket": "02_deepzoom.ipynb",
          "dzp_save": "02_deepzoom.ipynb",
          "dzi_to_js": "02_deepzoom.ipynb",
-         "list_names_and_js_urls": "02_deepzoom.ipynb",
-         "stack_image_json": "02_deepzoom.ipynb",
-         "make_multiviewer_jsonp": "02_deepzoom.ipynb",
-         "make_multiviewer_html": "02_deepzoom.ipynb",
          "dzp_thumbnail": "02_deepzoom.ipynb",
+         "list_names": "02_deepzoom.ipynb",
+         "stack_image_json": "02_deepzoom.ipynb",
+         "viewer_div": "02_deepzoom.ipynb",
+         "callback_viewer": "02_deepzoom.ipynb",
+         "DeepZoomStore": "02_deepzoom.ipynb",
          "ROOTDIR": "02_deepzoom.ipynb",
          "VIEWERSDIR": "02_deepzoom.ipynb"}
 

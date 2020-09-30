@@ -16,7 +16,7 @@ I assume you have Python installed and know how to run Jupyter notebooks. See: h
 
 3) Create a public B2 bucket with credentials (id and key) for reading and writing. 
 
-4) Follow the instructions 'Uploading your own deep zoom image'
+4) Follow the instructions [Uploading your own deep zoom image](https://fligt.github.io/deepzoomup/uploading/)
 
 
 
