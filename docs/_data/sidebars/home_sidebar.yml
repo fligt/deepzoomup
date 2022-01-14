@@ -13,11 +13,11 @@ entries:
       title: 'Uploading your own deep zoom image '
       url: /uploading
     - output: web,pdf
+      title: 'Deepzoom viewer demo  '
+      url: /deepzoom-viewer-demo
+    - output: web,pdf
       title: 'Functions '
       url: /deepzoom
-    - output: web,pdf
-      title: 'Publish your deep zoom images to the cloud '
-      url: /backblaze
     output: web
     title: deepzoomup
   output: web
