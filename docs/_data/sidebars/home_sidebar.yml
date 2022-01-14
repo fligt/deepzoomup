@@ -10,14 +10,11 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: 'Uploading your own deep zoom image '
-      url: /uploading
+      title: 1 Uploading your own deep zoom images
+      url: /uploading-your-own-deep-zoom-images
     - output: web,pdf
-      title: 'Deepzoom viewer demo  '
-      url: /deepzoom-viewer-demo
-    - output: web,pdf
-      title: 'Functions '
-      url: /deepzoom
+      title: '2 Viewing your deep zoom images '
+      url: /viewing-your-deep-zoom-images
     output: web
     title: deepzoomup
   output: web
