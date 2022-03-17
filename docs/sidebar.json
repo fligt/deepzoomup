@@ -1,7 +1,8 @@
 {
   "deepzoomup": {
     "Overview": "/",
-    "1 Uploading your own deep zoom images": "/uploading-your-own-deep-zoom-images",
-    "2 Viewing your deep zoom images ": "/viewing-your-deep-zoom-images"
+    "Getting started": "Getting-started.html",
+    "Uploading your own deep zoom images": "uploading-your-own-deep-zoom-images.html",
+    "Viewing your deep zoom images ": "viewing-your-deep-zoom-images.html"
   }
 }

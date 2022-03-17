@@ -2,7 +2,10 @@
 > Easily share your high resolution photos as deep zoom images with the world. 
 
 
-Creating large interactive deep zoom images on the web used to be a technically demanding job. Until now. This Python package *deepzoomup* has been made to easily convert your high resolution images and publish them on line as interactive deep zoom images for anyone to admire or study. 
+The ability to create and share web based high resolution interactive deep zoom images is a basic need in almost any heritage science project. Unfortunately this used to be a technically demanding job, out of reach for mortals with limited coding skills. Until now... 
+
+
+This python package `deepzoomup` can convert your high resolution images and and publish them on-line as interactive deep zoom images on your Backblaze cloud storage. 
 
 # What you need to do 
 
