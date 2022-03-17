@@ -1,5 +1,5 @@
 # Welcome to deepzoomup 
-> Easily share your high resolution photos as deep zoom images with the world. 
+> Easily share your high resolution photos as deep zoom images with the world! 
 
 
 The ability to create and share web based high resolution interactive deep zoom images is a basic need in almost any heritage science project. Unfortunately this used to be a technically demanding job, out of reach for mortals with limited coding skills. Until now.  
