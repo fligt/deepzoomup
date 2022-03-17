@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: github
-      external_url: https://github.com/fligt/dzi2b2/tree/master/
+      external_url: https://github.com/fligt/deepzoomup/tree/master/
 
 #Topnav dropdowns
 topnav_dropdowns:
