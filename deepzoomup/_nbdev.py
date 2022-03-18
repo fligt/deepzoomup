@@ -2,9 +2,12 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"DeepZoomBucket": "20_uploading-your-own-deep-zoom-images.ipynb",
+         "PREFIX": "20_uploading-your-own-deep-zoom-images.ipynb",
+         "ROOTDIR": "20_uploading-your-own-deep-zoom-images.ipynb",
+         "VIEWERSDIR": "20_uploading-your-own-deep-zoom-images.ipynb"}
 
-modules = []
+modules = ["dzi.py"]
 
 doc_url = "https://fligt.github.io/deepzoomup/"
 
