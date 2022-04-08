@@ -12,6 +12,6 @@ Here is an example of a cloud stored image that was created with *deepzoomup*:
     <img src="https://f002.backblazeb2.com/file/dore-data/deepzoom/dzp_RP-T-1930-22_highres/tn_RP-T-1930-22_highres.png" title="click image to open deepzoom viewer">
 </a>
 
-*One of the Three Kings Adoring the Virgin and Child*, Rembrandt van Rijn, c.1635 - c.1640
+*One of the Three Kings Adoring the Virgin and Child*, Rembrandt van Rijn, c.1635 - c.1640; Rijksmuseum Amsterdam catalog number [RP-T-1930-22](https://www.rijksmuseum.nl/en/collection/RP-T-1930-22/catalogue-entry)
 
-Rijksmuseum catalog [RP-T-1930-22](https://www.rijksmuseum.nl/en/collection/RP-T-1930-22/catalogue-entry)
+For installation instructions, documentation and code see: https://fligt.github.io/deepzoomup/
